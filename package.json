@@ -3,9 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@brightcove/videojs-flashls-source-handler": "^1.4.8",
+    "crossdomain": "^0.0.1",
+    "hls.js": "^0.12.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "video.js": "^7.5.4",
+    "videojs-contrib-hls": "^5.15.0",
+    "videojs-flash": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
