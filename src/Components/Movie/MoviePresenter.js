@@ -1,6 +1,6 @@
 import React from "react";
 import videojs from "video.js";
-import HLSSource from "../HLSSource";
+// import HLSSource from "../HLSSource";
 import "./video-js.css";
 import "videojs-flash";
 import "@brightcove/videojs-flashls-source-handler";
@@ -15,7 +15,6 @@ class MoviePresenter extends React.Component {
   }
   componentDidMount = () => {
     const videojs = window.videojs;
-
     videojs.Hls.GOAL_BUFFER_LENGTH = 10;
     videojs.Hls.MAX_GOAL_BUFFER_LENGTH = 10;
     const {
@@ -48,32 +47,32 @@ class MoviePresenter extends React.Component {
         console.log("onPlayerReady", this);
       }
     );
-    const player = this.player;
-    player.on("ready", function() {
-      // console.log("player: ", player);
+    const myPlayer = this.player;
+    myPlayer.ready(function() {
+      console.log("myPlayer.flash: ", myPlayer.options_.flash);
     });
 
     this.player.on(
       [
-        "loadstart",
-        "play",
-        "playing",
-        "firstplay",
-        "pause",
-        "ended",
-        "adplay",
-        "adplaying",
-        "adfirstplay",
-        "adpause",
-        "adended",
-        "contentplay",
-        "contentplaying",
-        "contentfirstplay",
-        "contentpause",
-        "contentended",
-        "contentupdate",
-        "loadeddata",
-        "loadedmetadata",
+        // "loadstart",
+        // "play",
+        // "playing",
+        // "firstplay",
+        // "pause",
+        // "ended",
+        // "adplay",
+        // "adplaying",
+        // "adfirstplay",
+        // "adpause",
+        // "adended",
+        // "contentplay",
+        // "contentplaying",
+        // "contentfirstplay",
+        // "contentpause",
+        // "contentended",
+        // "contentupdate",
+        // "loadeddata",
+        // "loadedmetadata",
         "error"
       ],
       function(e) {
