@@ -13,57 +13,22 @@ class HomePresenter extends React.Component {
       width: "640",
       height: "360",
       techOrder: ["flash"],
-      hls: {
-        hls_debug: true,
-        hls_lowbufferlength: 2,
-        hls_minbufferlength: 2,
-        hls_maxbufferlength: 2,
-        debug: true,
-        lowbufferlength: 2,
-        minbufferlength: 2,
-        maxbufferlength: 2
-      },
       html5: {
         hls: {
           withCredentials: false
         }
       },
       flash: {
-        // swf: require("videojs-swf/dist/video-js.swf"), // 안됨
-        // swf: require("@brightcove/videojs-flashls-source-handler/dist/video-js.swf"), // 됨
         // swf: require("@brightcove/videojs-flashls-source-handler/dist/video-js.swf"), // 됨
         swf:
           "https://unpkg.com/@brightcove/videojs-flashls-source-handler/dist/video-js.swf", // 됨
         flashVars: {
           withCredentials: false,
-          hls_debug: true,
-          hls_lowbufferlength: 2,
-          hls_minbufferlength: 2,
-          hls_maxbufferlength: 2,
-          debug: true,
-          lowbufferlength: 2,
-          minbufferlength: 2,
-          maxbufferlength: 2
-        },
-        flashls: {
-          withCredentials: false,
-          hls_debug: true,
-          hls_lowbufferlength: 2,
-          hls_minbufferlength: 2,
-          hls_maxbufferlength: 2,
-          debug: true,
-          lowbufferlength: 2,
-          minbufferlength: 2,
-          maxbufferlength: 2
-        },
-        hls_debug: true,
-        hls_lowbufferlength: 2,
-        hls_minbufferlength: 2,
-        hls_maxbufferlength: 2,
-        debug: true,
-        lowbufferlength: 2,
-        minbufferlength: 2,
-        maxbufferlength: 2
+          hls_debug2: true,
+          hls_lowbufferlength: 10,
+          hls_minbufferlength: 10,
+          hls_maxbufferlength: 10
+        }
       },
       sources: [
         {
