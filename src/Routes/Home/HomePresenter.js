@@ -12,10 +12,40 @@ class HomePresenter extends React.Component {
       muted: true,
       width: "640",
       height: "360",
-      techOrder: ["flash"],
+      techOrder: ["html5"],
+      GOAL_BUFFER_LENGTH: 10,
+      MAX_GOAL_BUFFER_LENGTH: 10,
       html5: {
+        GOAL_BUFFER_LENGTH: 10,
+        MAX_GOAL_BUFFER_LENGTH: 10,
+        Config: {
+          GOAL_BUFFER_LENGTH: 10,
+          MAX_GOAL_BUFFER_LENGTH: 10
+        },
         hls: {
-          withCredentials: false
+          withCredentials: false,
+          GOAL_BUFFER_LENGTH: 10,
+          MAX_GOAL_BUFFER_LENGTH: 10,
+          Config: {
+            GOAL_BUFFER_LENGTH: 10,
+            MAX_GOAL_BUFFER_LENGTH: 10
+          }
+        }
+      },
+      hls: {
+        GOAL_BUFFER_LENGTH: 10,
+        MAX_GOAL_BUFFER_LENGTH: 10,
+        options: {
+          GOAL_BUFFER_LENGTH: 10,
+          MAX_GOAL_BUFFER_LENGTH: 10,
+          Config: {
+            GOAL_BUFFER_LENGTH: 10,
+            MAX_GOAL_BUFFER_LENGTH: 10
+          }
+        },
+        Config: {
+          GOAL_BUFFER_LENGTH: 10,
+          MAX_GOAL_BUFFER_LENGTH: 10
         }
       },
       flash: {
