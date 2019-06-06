@@ -11,6 +11,13 @@ require("videojs-contrib-hls/dist/videojs-contrib-hls.js");
 class MoviePresenter extends React.Component {
   constructor(props) {
     super(props);
+    console.log("videoJsOptions: ", props);
+  }
+  componentDidMount = () => {
+    const videojs = window.videojs;
+
+    videojs.Hls.GOAL_BUFFER_LENGTH = 10;
+    videojs.Hls.MAX_GOAL_BUFFER_LENGTH = 10;
     const {
       aspectRatio,
       autoplay,
@@ -18,44 +25,34 @@ class MoviePresenter extends React.Component {
       muted,
       width,
       height,
+      html5,
       techOrder,
       flash,
       sources
-    } = props;
-    console.log(
-      "videoJsOptions: ",
-      aspectRatio,
-      autoplay,
-      controls,
-      muted,
-      width,
-      height,
-      techOrder,
-      flash,
-      sources
-    );
-  }
-  componentDidMount = () => {
-    const videojs = window.videojs;
-
-    videojs.Hls.BANDWIDTH_VARIANCE = 1.2;
-    videojs.Hls.BUFFER_LOW_WATER_LINE = 0;
-    videojs.Hls.BUFFER_LOW_WATER_LINE_RATE = 1;
-    videojs.Hls.GOAL_BUFFER_LENGTH = 10;
-    videojs.Hls.GOAL_BUFFER_LENGTH_RATE = 1;
-    videojs.Hls.MAX_BUFFER_LOW_WATER_LINE = 30;
-    videojs.Hls.MAX_GOAL_BUFFER_LENGTH = 10;
-
+    } = this.props;
     this.player = videojs(
       this.videoNode,
       {
-        ...this.props,
-        debug: true //...this.props,
+        aspectRatio,
+        autoplay,
+        controls,
+        muted,
+        width,
+        height,
+        html5,
+        techOrder,
+        flash,
+        sources
       },
       function onPlayerReady() {
         console.log("onPlayerReady", this);
       }
     );
+    const player = this.player;
+    player.on("ready", function() {
+      // console.log("player: ", player);
+    });
+
     this.player.on(
       [
         "loadstart",

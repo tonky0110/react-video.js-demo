@@ -12,13 +12,23 @@ class HomePresenter extends React.Component {
       muted: true,
       width: "640",
       height: "360",
-      techOrder: ["flash", "html5"],
+      html5: {
+        hls: {
+          withCredentials: false
+        }
+      },
+      techOrder: ["flash"],
       flash: {
-        swf: require("@brightcove/videojs-flashls-source-handler/dist/video-js.swf")
+        swf:
+          "https://unpkg.com/@brightcove/videojs-flashls-source-handler/dist/video-js.swf",
+        hls: {
+          withCredentials: false
+        }
       },
       sources: [
         {
-          src: "https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8",
+          src:
+            "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8",
           type: "application/x-mpegURL"
         }
       ]
