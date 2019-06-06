@@ -57,37 +57,21 @@ class MoviePresenter extends React.Component {
       }
     );
     const myPlayer = this.player;
-    const tech_ = myPlayer.tech_;
     myPlayer.ready(function() {
-      console.log("myPlayer: ", myPlayer);
-      // console.log("myPlayer.tech_: ", myPlayer.tech_);
-      // console.log("myPlayer.tech_.hls: ", myPlayer.tech_.hls);
-      // console.log("myPlayer.tech_.hls.options_: ", myPlayer.tech_.hls.options_);
-      // console.log(
-      //   "myPlayer.tech_.hls.options_.externHls: ",
-      //   myPlayer.tech_.hls.options_.externHls
-      // );
-      const externHls = myPlayer.tech_.hls.options_.externHls;
-      console.log("externHls: ", externHls);
-      console.log(
-        "1) myPlayer.tech_.hls.options_.externHls.GOAL_BUFFER_LENGTH: ",
-        myPlayer.tech_.hls.options_.externHls.GOAL_BUFFER_LENGTH
-      );
-      console.log(
-        "1) myPlayer.tech_.hls.options_.externHls.MAX_GOAL_BUFFER_LENGTH: ",
-        myPlayer.tech_.hls.options_.externHls.MAX_GOAL_BUFFER_LENGTH
-      );
-      // myPlayer.tech_.hls.options_.externHls.GOAL_BUFFER_LENGTH = 10;
-      // myPlayer.tech_.hls.options_.externHls.MAX_GOAL_BUFFER_LENGTH = 10;
-      console.log(
-        "2  ) myPlayer.tech_.hls.options_.externHls.GOAL_BUFFER_LENGTH: ",
-        myPlayer.tech_.hls.options_.externHls.GOAL_BUFFER_LENGTH
-      );
-      console.log(
-        "2  ) myPlayer.tech_.hls.options_.externHls.MAX_GOAL_BUFFER_LENGTH: ",
-        myPlayer.tech_.hls.options_.externHls.MAX_GOAL_BUFFER_LENGTH
-      );
-      // console.log("myPlayer.flash: ", myPlayer.options_.flash);
+      const techName = myPlayer.techName_;
+      if (techName === "Flash") {
+        console.log(`techName_: `, techName);
+        console.log("myPlayer.flash: ", myPlayer.options_.flash);
+      } else if (techName === "Html5") {
+        const { hls } = html5;
+        const externHls = myPlayer.tech_.hls.options_.externHls;
+        for (const props in hls) {
+          if (externHls[props]) {
+            externHls[props] = hls[props];
+            console.log(`externHls[${props}]: ${externHls[props]}`);
+          }
+        }
+      }
     });
 
     this.player.on(

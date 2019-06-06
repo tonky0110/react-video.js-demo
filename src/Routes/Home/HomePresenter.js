@@ -12,40 +12,17 @@ class HomePresenter extends React.Component {
       muted: true,
       width: "640",
       height: "360",
-      techOrder: ["html5"],
-      GOAL_BUFFER_LENGTH: 10,
-      MAX_GOAL_BUFFER_LENGTH: 10,
+      techOrder: ["html5", "flash"],
       html5: {
-        GOAL_BUFFER_LENGTH: 10,
-        MAX_GOAL_BUFFER_LENGTH: 10,
-        Config: {
-          GOAL_BUFFER_LENGTH: 10,
-          MAX_GOAL_BUFFER_LENGTH: 10
-        },
         hls: {
-          withCredentials: false,
-          GOAL_BUFFER_LENGTH: 10,
-          MAX_GOAL_BUFFER_LENGTH: 10,
-          Config: {
-            GOAL_BUFFER_LENGTH: 10,
-            MAX_GOAL_BUFFER_LENGTH: 10
-          }
-        }
-      },
-      hls: {
-        GOAL_BUFFER_LENGTH: 10,
-        MAX_GOAL_BUFFER_LENGTH: 10,
-        options: {
-          GOAL_BUFFER_LENGTH: 10,
-          MAX_GOAL_BUFFER_LENGTH: 10,
-          Config: {
-            GOAL_BUFFER_LENGTH: 10,
-            MAX_GOAL_BUFFER_LENGTH: 10
-          }
-        },
-        Config: {
+          // withCredentials: false,
           GOAL_BUFFER_LENGTH: 10,
           MAX_GOAL_BUFFER_LENGTH: 10
+          // GOAL_BUFFER_LENGTH_RATE: 1,
+          // BANDWIDTH_VARIANCE: 1.2,
+          // BUFFER_LOW_WATER_LINE: 0,
+          // MAX_BUFFER_LOW_WATER_LINE: 30,
+          // BUFFER_LOW_WATER_LINE_RATE: 1
         }
       },
       flash: {
